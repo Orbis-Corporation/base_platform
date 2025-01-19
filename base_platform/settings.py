@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "django.contrib.sites",
+    "django.contrib.sitemaps",
     "django_extensions",
     "app.main",
     "app.backoffice",
@@ -144,3 +145,5 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # Site configuration
 SITE_ID=1
+
+
