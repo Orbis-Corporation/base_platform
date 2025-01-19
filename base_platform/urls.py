@@ -8,6 +8,7 @@ urlpatterns = [
 
 urlpatterns += i18n_patterns(
     path('admin/', admin.site.urls),
+    path('waffle/', include('waffle.urls')),
     path('__reload__/', include('django_browser_reload.urls')),
     prefix_default_language=False,
 )

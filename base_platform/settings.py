@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     "django.contrib.sites",
     "django.contrib.sitemaps",
     "django_extensions",
+    'waffle',
+     'django_filters',
     "app.main",
     "app.backoffice",
 
@@ -51,6 +53,8 @@ MIDDLEWARE = [
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.locale.LocaleMiddleware",
     "django.middleware.common.CommonMiddleware",
+       'waffle.middleware.WaffleMiddleware',
+    'waffle.middleware.WaffleMiddleware',
     "django.contrib.sites.middleware.CurrentSiteMiddleware",
     "django_browser_reload.middleware.BrowserReloadMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -72,7 +76,8 @@ TEMPLATES = [
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
-                "django.template.context_processors.i18n"
+                "django.template.context_processors.i18n",
+                'waffle.context_processors.waffle',
             ],
         },
     },
@@ -144,6 +149,17 @@ STATIC_URL = "static/"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # Site configuration
-SITE_ID=1
+SITE_ID = 1
 
+
+
+# Waffle configuration
+WAFFLE_FLAG_DEFAULT = False
+WAFFLE_SWITCH_DEFAULT = False
+WAFFLE_SAMPLE_DEFAULT = False
+WAFFLE_CREATE_MISSING_FLAGS = True
+WAFFLE_CACHE_PREFIX = 'waffle:'
+
+# Django Filter settings
+FILTERS_EMPTY_CHOICE_LABEL = '-- All --'
 
